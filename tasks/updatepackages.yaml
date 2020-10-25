@@ -1,0 +1,5 @@
+- name: Update all packages
+  when: ansible_hostname == "mysql" or ansible_hostname == "app"
+  yum:
+    name: '*'
+    state: latest

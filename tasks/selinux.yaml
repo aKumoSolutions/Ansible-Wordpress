@@ -1,0 +1,13 @@
+- name: Manage SELinux
+  when: ansible_hostname == "mysql" or ansible_hostname == "app"
+  lineinfile:
+    path: /etc/selinux/config
+    regexp: '^SELINUX='
+    line: SELINUX=disabled
+  register: selinux
+
+- name: Reboot
+  when: 
+    - selinux.changed 
+    - ansible_hostname == "mysql" or ansible_hostname == "app"
+  reboot:

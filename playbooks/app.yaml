@@ -1,8 +1,0 @@
----
-  - name: Apache 
-    hosts: "{{ group }}"
-    gather_facts: "{{ facts }}"
-    vars_files:
-        - "../variables/app-values.yaml"
-    tasks:
-      - include: ../tasks/ping.yaml

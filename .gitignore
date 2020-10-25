@@ -1,9 +1,9 @@
 # Ignore Inventory 
-inventory
-*inventory
-inventory*
+#inventory
+#*inventory
+#inventory*
 
 # Ignore Variables
-variables
-*variables
-variables*
+#variables
+#*variables
+#variables*

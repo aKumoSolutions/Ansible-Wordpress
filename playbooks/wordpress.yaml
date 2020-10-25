@@ -1,0 +1,16 @@
+---
+  - name: Wordpress Installation
+    hosts: "{{ group }}"
+    gather_facts: "{{ facts }}"
+    vars_files:
+      - "../variables/wordpress-values.yaml"
+    tasks:
+      - include: ../tasks/updatepackages.yaml
+      - include: ../tasks/apacheinstallation.yaml
+      - include: ../tasks/mariadbinstallation.yaml
+      - include: ../tasks/mariadbsecureinstallation.yaml
+      - include: ../tasks/app-required-packages.yaml
+      - include: ../tasks/wordpressinstallation.yaml
+      - include: ../tasks/selinux.yaml
+      - include: ../tasks/firewalld.yaml
+      - include: ../tasks/mariadbmanagement.yaml
